@@ -47,7 +47,7 @@ int main(int argc, char **argv){
 	        	min1 = 500;
 	        	min2 = 500;
 
-			//find the average value on the left and the right
+			//find the minimum value on the left and the right
 	        	for (int i = startQ1; i < endQ1; i++){
 				if (msg.ranges[i] < min1) min1 = msg.ranges[i];
 	        	}
