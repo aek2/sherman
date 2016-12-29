@@ -28,17 +28,24 @@ int main(int argc, char **argv){
 
 	std::string name = ros::package::getPath("sherman");
 	ROS_INFO_STREAM(name);
+	
+	int startQ1;
+	int startQ2;
+	int endQ1;
+	int endQ2;
+	double min1;
+	double min2;
 
 	ROS_INFO_STREAM("Running Sherman...");	
 	while(ros::ok()){
 		//check to make sure that the msg has been set by the callback
 		if (msg.ranges.size() > 0){
-			int startQ1 = (msg.ranges.size())/4;
-	        	int startQ2 = (msg.ranges.size())/2;
-			int endQ1 = startQ2;
-			int endQ2 = startQ2 + startQ1;
-	        	double min1 = 500;
-	        	double min2 = 500;
+			startQ1 = (msg.ranges.size())/4;
+	        	startQ2 = (msg.ranges.size())/2;
+			endQ1 = startQ2;
+			endQ2 = startQ2 + startQ1;
+	        	min1 = 500;
+	        	min2 = 500;
 
 			//find the average value on the left and the right
 	        	for (int i = startQ1; i < endQ1; i++){
