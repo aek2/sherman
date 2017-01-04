@@ -5,12 +5,11 @@ project(sherman)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  gazebo_ros
-  geometry_msgs
   roscpp
   rospy
   std_msgs
   sound_play
+  roslib
 )
 
 ## System dependencies are found with CMake's conventions
@@ -105,7 +104,7 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES roomba
-#  CATKIN_DEPENDS gazebo_ros geometry_msgs roscpp rospy std_msgs
+  CATKIN_DEPENDS roscpp rospy std_msgs roslib
 #  DEPENDS system_lib
 )
 
